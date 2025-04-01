@@ -1,15 +1,25 @@
-import { defineConfig } from "eslint/config"
-import globals from "globals"
-import js from "@eslint/js" // 校验js规范
-import tseslint from "typescript-eslint" // 推荐的ts规范
-import pluginVue from "eslint-plugin-vue" // 推荐的vue的规范
-import prettierRecommended from "eslint-plugin-prettier/recommended"
+import { defineConfig } from "eslint/config";
+import globals from "globals";
+import js from "@eslint/js"; // 校验js规范
+import tseslint from "typescript-eslint"; // 推荐的ts规范
+import pluginVue from "eslint-plugin-vue"; // 推荐的vue的规范
+import prettierRecommended from "eslint-plugin-prettier/recommended";
+
+import { createRequire } from "module";
+const require = createRequire(import.meta.url);
+const autoImportConfig = require("./.eslintrc-auto-import.json");
 
 export default defineConfig([
   { files: ["**/*.{js,mjs,cjs,ts,vue}"] },
   {
     files: ["**/*.{js,mjs,cjs,ts,vue}"],
-    languageOptions: { globals: { ...globals.browser, ...globals.node } }
+    languageOptions: {
+      globals: {
+        ...globals.browser,
+        ...globals.node,
+        ...autoImportConfig.globals
+      }
+    }
   },
   {
     files: ["**/*.{js,mjs,cjs,ts,vue}"],
@@ -29,8 +39,9 @@ export default defineConfig([
   {
     // 自定义规则, 根据需要增加 eslint 主要是校验代码规范 prettier 主要用于格式化代码
     rules: {
-      "no-console": "warn"
+      "no-console": "warn",
+      "vue/multi-word-component-names": "off"
     }
   },
   prettierRecommended // 覆盖掉eslint的规则
-])
+]);
