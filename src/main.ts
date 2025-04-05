@@ -2,8 +2,10 @@ import { createApp } from "vue";
 import App from "./App.vue";
 import router from "./router";
 import "normalize.css/normalize.css";
+import "./style/index.scss";
 
 import { createPinia } from "pinia";
+import piniaPluginPersistedstate from "pinia-plugin-persistedstate";
 
 import element from "./plugins/element";
 // import ElementPlus from "element-plus"
@@ -12,6 +14,7 @@ import element from "./plugins/element";
 import "uno.css";
 
 const pinia = createPinia();
+pinia.use(piniaPluginPersistedstate);
 
 const app = createApp(App);
 

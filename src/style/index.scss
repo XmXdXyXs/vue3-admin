@@ -1,0 +1,6 @@
+@import "./variables.module.scss";
+:root {
+  --color-menu-text: #{$menuText};
+  --color-menu-active-text: #{$menuActiveText};
+  --color-menu-bg: #{$menuBg};
+}
