@@ -6,9 +6,7 @@
         <Navbar />
         <div class="tags-view h-34px bg-blue">tagsview</div>
       </div>
-      <div class="app-main bg-cyan h-[calc(100vh-84px)]">
-        <router-view></router-view>
-      </div>
+      <AppMain />
     </div>
   </div>
 </template>

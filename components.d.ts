@@ -8,6 +8,7 @@ export {}
 /* prettier-ignore */
 declare module 'vue' {
   export interface GlobalComponents {
+    AppMain: typeof import('./src/layout/components/AppMain.vue')['default']
     BreadCrumb: typeof import('./src/components/BreadCrumb/index.vue')['default']
     ElButton: typeof import('element-plus/es')['ElButton']
     ElIcon: typeof import('element-plus/es')['ElIcon']
