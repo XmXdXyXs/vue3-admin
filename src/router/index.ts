@@ -14,7 +14,7 @@ const publicRouter: RouteRecordRaw[] = [
     },
     children: [
       {
-        path: "/dashboard",
+        path: "dashboard",
         name: "Dashboard",
         component: () => import("@/views/dashboard/index.vue"),
         meta: {
@@ -32,7 +32,7 @@ const publicRouter: RouteRecordRaw[] = [
     },
     children: [
       {
-        path: "/homeCenter",
+        path: "homeCenter",
         name: "HomeCenter",
         component: () => import("@/views/homeCenter/index.vue"),
         meta: {
@@ -50,7 +50,7 @@ const publicRouter: RouteRecordRaw[] = [
     },
     children: [
       {
-        path: "/centerCenter",
+        path: "centerCenter",
         name: "AboutCenter",
         component: () => import("@/views/AboutCenter/index.vue"),
         meta: {
@@ -61,41 +61,45 @@ const publicRouter: RouteRecordRaw[] = [
     ]
   },
   {
-    path: "/content",
+    path: "/system",
     component: Layout,
     redirect: {
-      name: "ContentPageOne"
+      name: "Menu"
     },
     meta: {
       icon: "ant-design:book-filled",
-      title: "内容中心"
+      title: "系统中心",
+      alwaysShow: true // 用于判断主导航是否一直显示
     },
     children: [
       {
-        path: "/contentPageOne",
-        name: "ContentPageOne",
+        path: "menu",
+        name: "Menu",
         component: () => import("@/views/ContentCenter/index.vue"),
         meta: {
           icon: "ant-design:book-filled",
-          title: "内容中心1"
+          title: "menu",
+          hidden: false
         }
       },
       {
-        path: "/contentPageTwo",
-        name: "ContentPageTwo",
+        path: "role",
+        name: "Role",
         component: () => import("@/views/ContentCenter/content2.vue"),
         meta: {
           icon: "ant-design:book-outlined",
-          title: "内容中心2"
+          title: "role",
+          hidden: true
         }
       },
       {
-        path: "/contentPageThree",
-        name: "ContentPageThree",
+        path: "user",
+        name: "User",
         component: () => import("@/views/ContentCenter/content3.vue"),
         meta: {
           icon: "ant-design:book-twotone",
-          title: "内容中心3"
+          title: "user",
+          hidden: true
         }
       }
     ]

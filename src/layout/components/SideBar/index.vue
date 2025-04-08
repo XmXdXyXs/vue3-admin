@@ -1,7 +1,8 @@
 <template>
-  <div>
+  <div class="bg-[var(--color-menu-bg)] h-full">
     <el-menu
       router
+      border-none
       class="sidebar-container-menu"
       :default-active="defaultActive"
       background-color="var(--color-menu-bg)"
@@ -13,6 +14,7 @@
         v-for="item in routes"
         :key="item.path"
         :item="item"
+        :base-path="item.path"
       ></sidebarItem>
     </el-menu>
   </div>
