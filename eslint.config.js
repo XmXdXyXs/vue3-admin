@@ -40,7 +40,9 @@ export default defineConfig([
     // 自定义规则, 根据需要增加 eslint 主要是校验代码规范 prettier 主要用于格式化代码
     rules: {
       "no-console": "warn",
-      "vue/multi-word-component-names": "off"
+      "vue/multi-word-component-names": "off",
+      "@typescript-eslint/no-explicit-any": "off",
+      "@typescript-eslint/no-unused-vars": "off"
     }
   },
   prettierRecommended // 覆盖掉eslint的规则
