@@ -4,7 +4,7 @@
       <SvgIcon
         icon-name="iconamoon:arrow-left-2-fill"
         custom-class="w-20px h-20px cursor-pointer hover:bg-gray-200"
-        @click="move(-200)"
+        @click="move(-100)"
       ></SvgIcon>
     </div>
     <el-scrollbar ref="scrollbarRef" class="w-[calc(100%-52px)]">
@@ -39,7 +39,7 @@
       <SvgIcon
         custom-class="w-20px h-20px cursor-pointer hover:bg-gray-200"
         icon-name="iconamoon:arrow-right-2-fill"
-        @click="move(200)"
+        @click="move(100)"
       ></SvgIcon>
     </div>
   </div>
@@ -91,6 +91,7 @@ watch(
 // 移动到某个位置
 const move = (to: number) => {
   const wrap$ = unref(scrollbarRef)?.wrapRef;
+  scrollLeftNumber.value += to;
   const { start } = useScrollTo({
     el: wrap$!,
     position: "scrollLeft",
