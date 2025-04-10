@@ -7,5 +7,6 @@ declare module "vue-router" {
     title?: string;
     hidden?: boolean;
     alwaysShow?: boolean;
+    breadcrumb?: boolean;
   }
 }

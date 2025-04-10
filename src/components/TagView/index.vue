@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full h-34px px-4px box-border flex items-center">
+  <div class="w-full h-34px px-4px box-border flex items-center bg-[#f5f5f5]">
     <div class="flex justify-center items-center w-26px h-26px">
       <SvgIcon
         icon-name="iconamoon:arrow-left-2-fill"

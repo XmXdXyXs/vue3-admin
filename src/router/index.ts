@@ -78,7 +78,7 @@ const publicRouter: RouteRecordRaw[] = [
         component: () => import("@/views/ContentCenter/index.vue"),
         meta: {
           icon: "ant-design:book-filled",
-          title: "menu",
+          title: "菜单中心",
           hidden: false
         }
       },
@@ -88,19 +88,34 @@ const publicRouter: RouteRecordRaw[] = [
         component: () => import("@/views/ContentCenter/content2.vue"),
         meta: {
           icon: "ant-design:book-outlined",
-          title: "role",
-          hidden: true
+          title: "角色权限",
+          hidden: false,
+          breadcrumb: true // 用于判断面包屑导航是否一直存在
         }
       },
       {
         path: "user",
         name: "User",
-        component: () => import("@/views/ContentCenter/content3.vue"),
         meta: {
           icon: "ant-design:book-twotone",
-          title: "user",
-          hidden: true
-        }
+          title: "用户中心",
+          hidden: false,
+          alwaysShow: true
+        },
+        redirect: {
+          name: "Test"
+        },
+        children: [
+          {
+            path: "test",
+            name: "Test",
+            component: () => import("@/views/dashboard/index.vue"),
+            meta: {
+              icon: "ant-design:home-outlined",
+              title: "测试页面"
+            }
+          }
+        ]
       }
     ]
   }
