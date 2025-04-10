@@ -1,7 +1,10 @@
 <template>
   <div class="navbar h-50px flex justify-between">
     <Hamburger @click="toggleSilder" />
-    <Screenfull />
+    <div class="flex">
+      <Screenfull />
+      <Avatar />
+    </div>
   </div>
 </template>
 

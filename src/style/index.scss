@@ -3,4 +3,8 @@
   --color-menu-text: #{$menuText};
   --color-menu-active-text: #{$menuActiveText};
   --color-menu-bg: #{$menuBg};
+
+  .el-tooltip__trigger:focus-visible {
+    outline: none;
+  }
 }
