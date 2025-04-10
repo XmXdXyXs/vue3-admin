@@ -48,7 +48,7 @@
                   <div>
                     <SvgIcon
                       iconName="material-symbols:tab-close"
-                      custom-class="size-1.3em"
+                      custom-class="size-1.3em mr-5px"
                     ></SvgIcon
                     >关闭所有
                   </div>
@@ -57,7 +57,7 @@
                   <div>
                     <SvgIcon
                       iconName="material-symbols:tab-close-outline"
-                      custom-class="size-1.3em"
+                      custom-class="size-1.3em mr-5px"
                     ></SvgIcon
                     >关闭其他
                   </div></el-dropdown-item
@@ -66,7 +66,7 @@
                   ><div>
                     <SvgIcon
                       iconName="ant-design:close-square-twotone"
-                      custom-class="size-1.2em"
+                      custom-class="size-1.2em mr-1px"
                     ></SvgIcon>
                     关闭当前
                   </div>
@@ -78,7 +78,7 @@
                   <div>
                     <SvgIcon
                       iconName="mingcute:refresh-1-fill"
-                      custom-class="size-1.2em"
+                      custom-class="size-1.2em mr-1px"
                     ></SvgIcon>
                     刷新
                   </div></el-dropdown-item
