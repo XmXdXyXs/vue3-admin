@@ -1,6 +1,7 @@
 <template>
-  <div class="navbar h-50px">
-    <BreadCrumb @click="toggleSilder" />
+  <div class="navbar h-50px flex justify-between">
+    <Hamburger @click="toggleSilder" />
+    <Screenfull />
   </div>
 </template>
 

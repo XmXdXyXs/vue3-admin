@@ -9,6 +9,7 @@ export {}
 declare module 'vue' {
   export interface GlobalComponents {
     AppMain: typeof import('./src/layout/components/AppMain.vue')['default']
+    Breadcrumb: typeof import('./src/components/Breadcrumb/index.vue')['default']
     BreadCrumb: typeof import('./src/components/BreadCrumb/index.vue')['default']
     BreadCrumbLevel: typeof import('./src/components/BreadCrumbLevel/index.vue')['default']
     ElBreadcrumb: typeof import('element-plus/es')['ElBreadcrumb']
@@ -22,9 +23,11 @@ declare module 'vue' {
     ElMenuItem: typeof import('element-plus/es')['ElMenuItem']
     ElScrollbar: typeof import('element-plus/es')['ElScrollbar']
     ElSubMenu: typeof import('element-plus/es')['ElSubMenu']
+    Hamburger: typeof import('./src/components/Hamburger/index.vue')['default']
     Navbar: typeof import('./src/layout/components/Navbar/index.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    Screenfull: typeof import('./src/components/Screenfull/index.vue')['default']
     SideBar: typeof import('./src/layout/components/SideBar/index.vue')['default']
     SidebarItem: typeof import('./src/layout/components/SideBar/sidebarItem.vue')['default']
     SvgIcon: typeof import('./src/components/SvgIcon/index.vue')['default']
