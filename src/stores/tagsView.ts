@@ -40,7 +40,30 @@ export const useTagsViewStore = defineStore(
         routerCache.value.splice(index, 1);
       }
     };
-    return { visitedViews, routerCache, addView, delView, delRouterCache };
+
+    // 关闭所有close标签
+    const handleCloseAllTag = () => {
+      visitedViews.value = [];
+      routerCache.value = [];
+    };
+    // 关闭其他
+    const handleCloseOtherTag = (view: routeType) => {
+      visitedViews.value = visitedViews.value.filter(
+        (route) => route.name === view.name
+      );
+      routerCache.value = routerCache.value.filter(
+        (name) => name === view.name
+      );
+    };
+    return {
+      visitedViews,
+      routerCache,
+      addView,
+      delView,
+      delRouterCache,
+      handleCloseAllTag,
+      handleCloseOtherTag
+    };
   },
   {
     persist: {

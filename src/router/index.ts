@@ -19,8 +19,15 @@ const publicRouter: RouteRecordRaw[] = [
         component: () => import("@/views/dashboard/index.vue"),
         meta: {
           icon: "ant-design:home-outlined",
-          title: "个人中心",
-          noCache: true // 页面是否开启不缓存
+          title: "个人中心"
+          // noCache: true // 页面是否开启不缓存
+        }
+      },
+      {
+        path: "/redirect/:path(.*)",
+        component: () => import("@/views/Redirect/index.vue"),
+        meta: {
+          hidden: true
         }
       }
     ]
