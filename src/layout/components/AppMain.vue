@@ -5,13 +5,19 @@
     <BreadCrumbLevel />
     <router-view v-slot="{ Component, route }">
       <transition name="fade" mode="out-in">
-        <keep-alive>
+        <keep-alive :include="routerCache">
           <component :is="Component" :key="route.path"></component>
         </keep-alive>
       </transition>
     </router-view>
   </div>
 </template>
+
+<script lang="ts" setup>
+import { useTagsViewStore } from "@/stores/tagsView";
+const store = useTagsViewStore();
+const { routerCache } = storeToRefs(store);
+</script>
 
 <style lang="scss" scoped>
 .fade-enter-active,

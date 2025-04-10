@@ -19,7 +19,8 @@ const publicRouter: RouteRecordRaw[] = [
         component: () => import("@/views/dashboard/index.vue"),
         meta: {
           icon: "ant-design:home-outlined",
-          title: "个人中心"
+          title: "个人中心",
+          noCache: true // 页面是否开启不缓存
         }
       }
     ]
@@ -64,7 +65,7 @@ const publicRouter: RouteRecordRaw[] = [
     path: "/system",
     component: Layout,
     redirect: {
-      name: "Menu"
+      name: "MenuCenter"
     },
     meta: {
       icon: "ant-design:book-filled",
@@ -74,7 +75,7 @@ const publicRouter: RouteRecordRaw[] = [
     children: [
       {
         path: "menu",
-        name: "Menu",
+        name: "MenuCenter",
         component: () => import("@/views/ContentCenter/index.vue"),
         meta: {
           icon: "ant-design:book-filled",
@@ -109,7 +110,7 @@ const publicRouter: RouteRecordRaw[] = [
           {
             path: "test",
             name: "Test",
-            component: () => import("@/views/dashboard/index.vue"),
+            component: () => import("@/views/ContentCenter/content3.vue"),
             meta: {
               icon: "ant-design:home-outlined",
               title: "测试页面"

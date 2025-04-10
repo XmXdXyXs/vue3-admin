@@ -1,6 +1,7 @@
 <template>
   <div>
     <div class="text-red">
+      <input />
       <el-button @click="handleMessage">点击</el-button>
     </div>
     <SvgIcon
@@ -19,6 +20,9 @@
 </template>
 
 <script lang="ts" setup>
+defineOptions({
+  name: "Dashboard"
+});
 import VueSvg from "@/assets/vue.svg?url";
 const { proxy } = getCurrentInstance()!;
 const handleMessage = () => {
