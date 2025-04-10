@@ -42,7 +42,7 @@ const getBreadcrumb = () => {
       {
         path: "/dashboard",
         meta: {
-          title: "dashboard"
+          title: "个人中心"
         }
       },
       ...matched
