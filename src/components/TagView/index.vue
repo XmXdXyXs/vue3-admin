@@ -77,7 +77,7 @@
                 >
                   <div>
                     <SvgIcon
-                      iconName="mingcute:refresh-2-fill"
+                      iconName="mingcute:refresh-1-fill"
                       custom-class="size-1.2em"
                     ></SvgIcon>
                     刷新
