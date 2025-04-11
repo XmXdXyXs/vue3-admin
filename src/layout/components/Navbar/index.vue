@@ -3,6 +3,7 @@
     <Hamburger @click="toggleSilder" />
     <div class="flex">
       <Screenfull />
+      <Setting />
       <Avatar />
     </div>
   </div>
@@ -10,7 +11,6 @@
 
 <script setup lang="ts">
 import { useAppStrore } from "@/stores/app";
-
 const { toggleSilder } = useAppStrore();
 </script>
 

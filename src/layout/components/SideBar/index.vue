@@ -1,5 +1,6 @@
 <template>
   <div class="bg-[var(--color-menu-bg)] h-full">
+    <Logo :collapse="silder.opened" v-if="setting.logoVisiable" />
     <el-menu
       router
       border-none
@@ -23,6 +24,9 @@
 <script lang="ts" setup>
 import { routes } from "@/router";
 import { useAppStrore } from "@/stores/app";
+import { useSetting } from "@/stores/setting";
+const settingStore = useSetting();
+const { setting } = storeToRefs(settingStore);
 const store = useAppStrore();
 const { silder } = store;
 const route = useRoute();

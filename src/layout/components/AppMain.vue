@@ -1,7 +1,5 @@
 <template>
-  <div
-    class="app-main h-[calc(100vh-84px)] overflow-hidden relative px-[12px] py-[12px] box-border"
-  >
+  <div class="app-main overflow-hidden relative px-[12px] py-[12px] box-border">
     <BreadCrumbLevel />
     <router-view v-slot="{ Component, route }">
       <transition name="fade" mode="out-in">
