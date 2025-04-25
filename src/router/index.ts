@@ -7,6 +7,13 @@ const privateRouter: RouteRecordRaw[] = [];
 // 公共路由
 const publicRouter: RouteRecordRaw[] = [
   {
+    path: "/login",
+    component: () => import("@/views/Login/index.vue"),
+    meta: {
+      hidden: true
+    }
+  },
+  {
     path: "/",
     component: Layout,
     redirect: {

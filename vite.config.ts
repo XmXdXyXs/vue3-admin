@@ -17,6 +17,22 @@ export default defineConfig({
       }
     ]
   },
+  server: {
+    proxy: {
+      "/dev-api": {
+        target: "http://localhost:3000",
+        changeOrigin: true,
+        ws: true,
+        rewrite: (path) => path.replace(/^\/dev-api/, "/api")
+      },
+      "/prod-api": {
+        target: "http://localhost:3000",
+        changeOrigin: true,
+        ws: true,
+        rewrite: (path) => path.replace(/^\/prod-api/, "/api")
+      }
+    }
+  },
 
   plugins: [
     vue(),
