@@ -1,6 +1,7 @@
 import axios from "axios";
 import { getToken } from "@/utils/auth";
 import { ElMessage } from "element-plus";
+import { useClear } from "@/hooks/useClear";
 
 const server = axios.create({
   baseURL: import.meta.env.VITE_BASE_API,
@@ -27,7 +28,7 @@ server.interceptors.response.use(
     const res = response.data;
     if (res.code !== 0) {
       ElMessage.error(res.message);
-      return Promise.reject(new Error(res.message || "Error"));
+      return Promise.reject(res.message);
     } else {
       return res;
     }
@@ -37,10 +38,9 @@ server.interceptors.response.use(
     if (response) {
       const { status, data } = response;
       if (status === 401) {
-        ElMessage.error("登录失效，请重新登录");
-        setTimeout(() => {
-          window.location.href = "/login";
-        }, 2000);
+        useClear();
+        ElMessage.error("token过期，请重新登录");
+        window.location.reload();
       } else if (status === 403) {
         ElMessage.error("没有权限，请联系管理员");
       } else if (status === 404) {

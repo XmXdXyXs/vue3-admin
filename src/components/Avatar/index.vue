@@ -1,7 +1,7 @@
 <template>
   <el-dropdown>
     <div class="flex items-center justify-center px-8px cursor-pointer">
-      jay sun
+      {{ state.userName }}
     </div>
     <template #dropdown>
       <el-dropdown-menu>
@@ -20,7 +20,12 @@
   </el-dropdown>
 </template>
 <script lang="ts" setup>
+import { useClear } from "@/hooks/useClear";
+import { useStore } from "@/stores/user";
+const store = useStore();
+const { state } = storeToRefs(store);
 const logout = () => {
-  console.log("退出登录");
+  useClear();
+  window.location.reload();
 };
 </script>

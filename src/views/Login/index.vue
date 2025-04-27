@@ -68,6 +68,9 @@ const loginFormRef = useTemplateRef<FormInstance>("form");
 const passwordRef = useTemplateRef<HTMLInputElement>("password");
 const usernameRef = useTemplateRef<HTMLInputElement>("username");
 import { useStore } from "@/stores/user";
+import { useGetQuery } from "@/hooks/useRouteQuery";
+import router from "@/router";
+const { readirect, otherQuery } = useGetQuery();
 const store = useStore();
 
 const loginState = reactive({
@@ -104,7 +107,12 @@ const handleLogin = () => {
     if (valid) {
       try {
         await store.login(loginState.loginForm);
+        store.setUserName(loginState.loginForm.username);
         loading.value = false;
+        router.push({
+          path: readirect.value || "/",
+          query: otherQuery.value
+        });
       } catch (error) {
         loading.value = false;
       }
