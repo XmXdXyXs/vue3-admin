@@ -27,7 +27,7 @@ const publicRouter: RouteRecordRaw[] = [
         meta: {
           icon: "ant-design:home-outlined",
           title: "个人中心"
-          // noCache: true // 页面是否开启不缓存
+          // noCache: false // 页面是否开启不缓存
         }
       },
       {
@@ -105,7 +105,8 @@ const publicRouter: RouteRecordRaw[] = [
           icon: "ant-design:book-outlined",
           title: "角色权限",
           hidden: false,
-          breadcrumb: true // 用于判断面包屑导航是否一直存在
+          breadcrumb: true, // 用于判断面包屑导航是否一直存在
+          noCache: true // 用于判断当前路由是否需要缓存
         }
       },
       {

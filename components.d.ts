@@ -8,6 +8,8 @@ export {}
 /* prettier-ignore */
 declare module 'vue' {
   export interface GlobalComponents {
+    AddEditRole: typeof import('./src/views/System/role/components/AddEditRole.vue')['default']
+    AddRole: typeof import('./src/views/System/role/components/AddRole.vue')['default']
     AppMain: typeof import('./src/layout/components/AppMain.vue')['default']
     Avatar: typeof import('./src/components/Avatar/index.vue')['default']
     Breadcrumb: typeof import('./src/components/Breadcrumb/index.vue')['default']
@@ -18,6 +20,7 @@ declare module 'vue' {
     ElBreadcrumbItem: typeof import('element-plus/es')['ElBreadcrumbItem']
     ElButton: typeof import('element-plus/es')['ElButton']
     ElConfigProvider: typeof import('element-plus/es')['ElConfigProvider']
+    ElDialog: typeof import('element-plus/es')['ElDialog']
     ElDrawer: typeof import('element-plus/es')['ElDrawer']
     ElDropdown: typeof import('element-plus/es')['ElDropdown']
     ElDropdownItem: typeof import('element-plus/es')['ElDropdownItem']
@@ -29,6 +32,7 @@ declare module 'vue' {
     ElMenu: typeof import('element-plus/es')['ElMenu']
     ElMenuItem: typeof import('element-plus/es')['ElMenuItem']
     ElPagination: typeof import('element-plus/es')['ElPagination']
+    ElPopconfirm: typeof import('element-plus/es')['ElPopconfirm']
     ElScrollbar: typeof import('element-plus/es')['ElScrollbar']
     ElSubMenu: typeof import('element-plus/es')['ElSubMenu']
     ElSwitch: typeof import('element-plus/es')['ElSwitch']

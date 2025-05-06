@@ -47,7 +47,11 @@ export default defineConfig({
     Components({
       // 默认只针对src/components⽬录实现⾃动导⼊ 解析组件
       resolvers: [ElementPlusResolver()],
-      dirs: ["src/components", "src/layout/components"] // 所有的组件可以自己动态加载
+      dirs: [
+        "src/components",
+        "src/layout/components",
+        "src/views/**/components"
+      ] // 所有的组件可以自己动态加载
     }),
     ElementPlus({})
   ]
