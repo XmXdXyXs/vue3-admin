@@ -7,6 +7,7 @@ import AutoImport from "unplugin-auto-import/vite";
 import Components from "unplugin-vue-components/vite";
 import ElementPlus from "unplugin-element-plus/vite";
 import { ElementPlusResolver } from "unplugin-vue-components/resolvers";
+import zhCn from "element-plus/es/locale/lang/zh-cn";
 // https://vite.dev/config/
 export default defineConfig({
   resolve: {

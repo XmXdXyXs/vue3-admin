@@ -90,7 +90,7 @@ const publicRouter: RouteRecordRaw[] = [
       {
         path: "menu",
         name: "MenuCenter",
-        component: () => import("@/views/ContentCenter/index.vue"),
+        component: () => import("@/views/System/menu/index.vue"),
         meta: {
           icon: "ant-design:book-filled",
           title: "菜单中心",
@@ -100,7 +100,7 @@ const publicRouter: RouteRecordRaw[] = [
       {
         path: "role",
         name: "Role",
-        component: () => import("@/views/ContentCenter/content2.vue"),
+        component: () => import("@/views/System/role/index.vue"),
         meta: {
           icon: "ant-design:book-outlined",
           title: "角色权限",
@@ -114,23 +114,9 @@ const publicRouter: RouteRecordRaw[] = [
         meta: {
           icon: "ant-design:book-twotone",
           title: "用户中心",
-          hidden: false,
-          alwaysShow: true
+          hidden: false
         },
-        redirect: {
-          name: "Test"
-        },
-        children: [
-          {
-            path: "test",
-            name: "Test",
-            component: () => import("@/views/ContentCenter/content3.vue"),
-            meta: {
-              icon: "ant-design:home-outlined",
-              title: "测试页面"
-            }
-          }
-        ]
+        component: () => import("@/views/System/user/index.vue")
       }
     ]
   }
